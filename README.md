@@ -5,9 +5,13 @@ Home: https://github.com/pyinstaller/pyinstaller-hooks-contrib
 
 Package license: Apache-2.0 OR GPL-2.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyinstaller-hooks-contrib-feedstock/blob/master/LICENSE.txt)
 
 Summary: Community maintained hooks for PyInstaller
+
+Development: https://github.com/pyinstaller/pyinstaller-hooks-contrib
+
+Documentation: https://github.com/pyinstaller/pyinstaller-hooks-contrib/wiki
 
 A "hook" file extends PyInstaller to adapt it to the special needs and
 methods used by a Python package. The word "hook" is used for two kinds of
