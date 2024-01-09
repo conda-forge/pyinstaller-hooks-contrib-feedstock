@@ -12,14 +12,15 @@ source:
 build:
   noarch: python
   number: 1
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
   run:
-    - python >=3.7
+    - python
     - setuptools >=42.0.0
     - importlib_metadata >=4.6  # [py<=310]
     - packaging >=22.0
