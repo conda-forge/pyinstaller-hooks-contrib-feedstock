@@ -1,5 +1,5 @@
 {% set name = "pyinstaller-hooks-contrib" %}
-{% set version = "2024.1" %}
+{% set version = "2024.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/pyinstaller/pyinstaller-hooks-contrib/archive/v{{ version }}.tar.gz
-  sha256: f013075410f2e6afc7e3c3932b71008fa58252559a3c2df4f5eff58bb01b810a
+  sha256: b5523369c7a26f3067e96a158ea96b8f7765a9db967b831cdef025f06e5fb33c
 
 build:
   noarch: python
