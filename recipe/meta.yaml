@@ -27,7 +27,9 @@ requirements:
 test:
   imports:
     - _pyinstaller_hooks_contrib
-    - _pyinstaller_hooks_contrib.hooks
+    - _pyinstaller_hooks_contrib.rthooks
+    - _pyinstaller_hooks_contrib.stdhooks
+    - _pyinstaller_hooks_contrib.utils
 
 about:
   home: https://github.com/pyinstaller/pyinstaller-hooks-contrib
