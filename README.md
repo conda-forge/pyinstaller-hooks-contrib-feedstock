@@ -157,4 +157,5 @@ Feedstock Maintainers
 =====================
 
 * [@nehaljwani](https://github.com/nehaljwani/)
+* [@soapy1](https://github.com/soapy1/)
 
