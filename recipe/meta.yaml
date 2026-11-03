@@ -8,10 +8,12 @@ package:
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/pyinstaller_hooks_contrib-{{ version }}.tar.gz
   sha256: 2748767901acb5cecd1304652b6c7add5bffcff1d71d01207fe24a5d42942a56
+  patches:
+    - collect-conda-certifi-bundle.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -28,6 +30,8 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - certifi >=2026.10.23
+    - pyinstaller >=5.0
   imports:
     - _pyinstaller_hooks_contrib
     - _pyinstaller_hooks_contrib.rthooks
