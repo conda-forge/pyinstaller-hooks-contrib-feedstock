@@ -1,0 +1,31 @@
+--- a/_pyinstaller_hooks_contrib/stdhooks/hook-certifi.py
++++ b/_pyinstaller_hooks_contrib/stdhooks/hook-certifi.py
+@@ -16,6 +16,28 @@
+ 
+ # It has been extracted from the Requests project.
+ 
++from PyInstaller import isolated
++from PyInstaller.compat import is_conda
+ from PyInstaller.utils.hooks import collect_data_files
+ 
+ datas = collect_data_files('certifi')
++
++# Conda-forge certifi uses the ca-certificates bundle outside its package.
++if is_conda and not any(source.endswith('cacert.pem') for source, _ in datas):
++    @isolated.decorate
++    def _get_conda_ca_bundle():
++        import sys
++        from pathlib import Path
++
++        import certifi
++
++        ca_file = Path(certifi.where())
++        try:
++            destination = ca_file.relative_to(sys.base_prefix).parent
++        except ValueError:
++            return None
++        return str(ca_file), str(destination)
++
++    ca_bundle = _get_conda_ca_bundle()
++    if ca_bundle is not None:
++        datas.append(ca_bundle)
