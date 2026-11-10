@@ -1,5 +1,5 @@
 {% set name = "pyinstaller-hooks-contrib" %}
-{% set version = "2026.9" %}
+{% set version = "2026.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/pyinstaller_hooks_contrib-{{ version }}.tar.gz
-  sha256: 2748767901acb5cecd1304652b6c7add5bffcff1d71d01207fe24a5d42942a56
+  sha256: 7e906c659522e592a1680f30f709ffb6333277141a695926aa7190592205c5e3
   patches:
     - collect-conda-certifi-bundle.patch
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
